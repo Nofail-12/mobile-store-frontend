@@ -1,2 +1,2 @@
-# Online_Mobile_Services
-This repository contains codebase for online mobile serves
+# mobile-store-frontend
+This repository contains codebase for mobile-store-frontend
