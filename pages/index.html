@@ -1,263 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Mobile Website</title>
-    
-    <!-- 
-      Link to your external stylesheet. 
-      You will create this file (e.g., style.css) to add all your styles.
-    -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Mobile Website</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
 
-    <!-- 
-      ========================================
-      Header & Mobile Navigation
-      ========================================
-    -->
-    <header id="main-header">
-        <div>
-            <div>
-                <!-- Logo -->
-                <a href="#" id="logo">Brand</a>
-                
-                <!-- Desktop Navigation -->
-                <nav id="desktop-nav">
-                    <a href="index.html">Home</a>
-                    <a href="products.html">Products</a>
-                    <a href="promotions.html">Promotions</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-                
-                <!-- Mobile Menu Toggle (Hamburger Icon) -->
-                <button id="menu-toggle">
-                    <!-- You can place an SVG or icon font here -->
-                    <span>Menu</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Menu (Full-screen overlay or slide-in) -->
-    <nav id="mobile-menu">
-        <!-- Close Button -->
-        <button id="menu-close">
-            <!-- You can place an SVG or icon font here -->
-            <span>Close</span>
-        </button>
-        
-        <!-- Menu Links -->
-        <a href="index.html" class="menu-link">Home</a>
-        <a href="products.html" class="menu-link">Products</a>
-        <a href="promotions.html" class="menu-link">Promotions</a>
-        <a href="contact.html" class="menu-link">Contact</a>
-        <a href="contact.html" class="menu-cta-button">Get Started</a>
+  <!-- ========================= HEADER / NAVIGATION ========================== -->
+  <header class="header">
+    <a href="index.html" class="logo">Mobile Store</a>
+    <nav class="nav-desktop nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Products</a>
+      <a href="promotions.html">Promotions</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  </header>
 
+  <!-- ========================= MOBILE MENU ========================== -->
+  <nav id="mobile-menu" class="mobile-menu">
+    <button id="menu-close" class="menu-close">✖</button>
+    <a href="index.html" class="menu-link">Home</a>
+    <a href="products.html" class="menu-link">Products</a>
+    <a href="promotions.html" class="menu-link">Promotions</a>
+    <a href="contact.html" class="menu-link">Contact</a>
+  </nav>
 
-    <!-- 
-      ========================================
-      Main Content
-      ========================================
-    -->
-    <main>
-
-        <!-- Hero Section -->
-        <section id="home">
-            <div>
-                <div>
-                    <!-- Text Content -->
-                    <div>
-                        <h1>A Modern Web Experience for Mobile.</h1>
-                        <p>
-                            Beautifully designed, lightning fast, and fully interactive. Discover what's possible with a mobile-first approach.
-                        </p>
-                        <div>
-                            <a href="contact.html">Get Started</a>
-                            <a href="products.html">Learn More</a>
-                        </div>
-                    </div>
-                    <!-- Image Content -->
-                    <div>
-                        <img src="https://placehold.co/600x600/3B82F6/FFFFFF?text=App+Screenshot" 
-                             alt="App Screenshot"
-                             onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Image'">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features">
-            <div>
-                <div>
-                    <span>Why Choose Us</span>
-                    <h2>Features You'll Love</h2>
-                </div>
-                
-                <div>
-                    <!-- Feature Card 1 -->
-                    <article>
-                        <div><!-- Icon placeholder --></div>
-                        <h3>Mobile First</h3>
-                        <p>Designed from the ground up to look and work perfectly on your phone.</p>
-                    </article>
-                    
-                    <!-- Feature Card 2 -->
-                    <article>
-                        <div><!-- Icon placeholder --></div>
-                        <h3>Blazing Fast</h3>
-                        <p>Optimized for speed. No waiting, just instant loading and interaction.</p>
-                    </article>
-                    
-                    <!-- Feature Card 3 -->
-                    <article>
-                        <div><!-- Icon placeholder --></div>
-                        <h3>Interactive UI</h3>
-                        <p>Smooth animations and intuitive controls that make your users feel at home.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Showcase Section -->
-        <section id="showcase">
-            <div>
-                <div class="text-center mb-16">
-                    <span>Our Work</span>
-                    <h2>Beautiful Showcase</h2>
-                    <p>Here are some examples of what we can do.</p>
-                </div>
-                
-                <div>
-                    <!-- Showcase Item 1 -->
-                    <a href="#" class="showcase-item">
-                        <img src="https://placehold.co/600x400/9333EA/FFFFFF?text=Project+One" 
-                             alt="Project One Screenshot"
-                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+One'">
-                        <h3>Project One</h3>
-                        <p>A description of the first project.</p>
-                    </a>
-                    
-                    <!-- Showcase Item 2 -->
-                    <a href="#" class="showcase-item">
-                        <img src="https://placehold.co/600x400/DB2777/FFFFFF?text=Project+Two" 
-                             alt="Project Two Screenshot"
-                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+Two'">
-                        <h3>Project Two</h3>
-                        <p>A description of the second project.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div>
-                <div>
-                    <span>Get In Touch</span>
-                    <h2>Contact Us</h2>
-                    <p>We'd love to hear from you. Send us a message!</p>
-                </div>
-                
-                <form id="contact-form">
-                    <div>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- 
-      ========================================
-      Footer
-      ========================================
-    -->
-    <footer>
-        <div>
-            <div>
-                <a href="#" id="footer-logo">Brand</a>
-                <p>A modern web experience.</p>
-            </div>
-            <div>
-                <p>&copy; 2025 Brand. All rights reserved.</p>
-                <div>
-                    <!-- Social links placeholder -->
-                    <a href="#">Social</a>
-                    <a href="#">Social</a>
-                </div>
-            </div>
+  <!-- ========================= HERO SECTION ========================== -->
+  <main class="page-container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Modern Web Experience for Mobile</h1>
+        <p>Beautifully designed, lightning fast, and fully interactive — discover what's possible with a mobile-first approach.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn-primary">Get Started</a>
+          <a href="products.html" class="btn-secondary">Learn More</a>
         </div>
-    </footer>
+      </div>
+      <div class="hero-image">
+        <img src="https://placehold.co/500x400/3B82F6/FFFFFF?text=App+Screenshot" alt="App Screenshot" />
+      </div>
+    </section>
 
-    <!-- 
-      ========================================
-      JavaScript for Interactions
-      ========================================
-    -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menu-toggle');
-            const menuClose = document.getElementById('menu-close');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuLinks = document.querySelectorAll('.menu-link');
+    <section class="features">
+      <div class="section-title">
+        <span>Why Choose Us</span>
+        <h2>Features You'll Love</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Mobile First</h3>
+          <p>Designed from the ground up to look and work perfectly on your phone.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Blazing Fast</h3>
+          <p>Optimized for speed — instant loading and interaction.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Interactive UI</h3>
+          <p>Smooth animations and intuitive controls that make your users feel at home.</p>
+        </div>
+      </div>
+    </section>
 
-            if (menuToggle && mobileMenu && menuClose) {
-                // Open menu
-                menuToggle.addEventListener('click', () => {
-                <!-- Close menu when a link is clicked (for single-page apps) -->
-                menuLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        // If linking to a new page, let the default behavior happen
-                        if (link.href.includes('.html')) {
-                           return;
-                        }
-                        // If it's an anchor link on the same page, close menu
-                        e.preventDefault();
-                        console.log('Menu link clicked');
-                        mobileMenu.style.transform = 'translateX(-100%)'; // Example interaction
-                        
-                        // Optional: Smooth scroll to anchor
-                        const targetId = link.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    });
-                });
-            }
+    <section class="showcase">
+      <div class="section-title">
+        <span>Our Work</span>
+        <h2>Beautiful Showcase</h2>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-item">
+          <img src="https://placehold.co/600x400/9333EA/FFFFFF?text=Project+One" alt="Project One" />
+          <h3>Project One</h3>
+          <p>A description of the first project.</p>
+        </div>
+        <div class="showcase-item">
+          <img src="https://placehold.co/600x400/DB2777/FFFFFF?text=Project+Two" alt="Project Two" />
+          <h3>Project Two</h3>
+          <p>A description of the second project.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            // Optional: Handle form submission
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault(); // Prevent actual submission for this demo
-                    console.log('Form submitted!');
-                    // You would add your form submission logic here (e.g., fetch)
-                    alert('Thank you for your message! (Form submission demo)');
-                });
-            }
-            
-            // Note: The fade-in-up animation logic from the previous file
-            // would require CSS. This script focuses on the menu functionality.
-        });
-    </script>
+  <!-- ========================= FOOTER ========================== -->
+  <footer class="footer">
+    <a href="index.html" class="footer-logo">Mobile Store</a>
+    <p>&copy; 2025 Mobile Store. All rights reserved.</p>
+  </footer>
 
+  <!-- ========================= JS ========================== -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const closeBtn = document.getElementById("menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => mobileMenu.classList.add("open"));
+    closeBtn.addEventListener("click", () => mobileMenu.classList.remove("open"));
+  </script>
 </body>
 </html>
-
-
