@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Promotions | Mobile Store</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER (unchanged) -->
+  <header class="header">
+    <a href="index.html" class="logo">Mobile Store</a>
+    <nav class="nav-desktop nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="promotions.html" class="active">Promotions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  </header>
+
+  <!-- MOBILE MENU (unchanged) -->
+  <nav id="mobile-menu" class="mobile-menu">
+    <button id="menu-close" class="menu-close">✖</button>
+    <a href="index.html" class="menu-link">Home</a>
+    <a href="products.html" class="menu-link">Products</a>
+    <a href="promotions.html" class="menu-link">Promotions</a>
+    <a href="contact.html" class="menu-link">Contact</a>
+  </nav>
+
+  <!-- MAIN SECTION -->
+  <main class="page-container">
+    <h2 class="page-title">🔥 Exclusive Mobile Promotions 🔥</h2>
+
+    <!-- Search and Filter Bar -->
+    <div class="filter-bar">
+      <div class="search-box">
+        <input type="text" id="search" placeholder="Search deals..." />
+      </div>
+      <select id="filter" class="filter-select">
+        <option value="all">All Brands</option>
+        <option value="apple">Apple</option>
+        <option value="samsung">Samsung</option>
+        <option value="google">Google</option>
+        <option value="oneplus">OnePlus</option>
+      </select>
+    </div>
+
+    <!-- Promotions Grid -->
+    <div class="promo-grid" id="promoGrid">
+      <div class="promo-card" data-brand="apple">
+        <div class="discount-badge">20% OFF</div>
+        <img src="https://images.unsplash.com/photo-1695653422251-2b2d7b602c36?w=600" alt="iPhone 15 Offer" class="promo-img" />
+        <h3 class="promo-name">iPhone 15 Pro Deal</h3>
+        <p class="promo-desc">Save big on the A17 Bionic-powered iPhone 15! Limited-time launch offer.</p>
+        <p class="promo-price"><span class="old-price">$999</span> $799</p>
+        <a href="product-details.html" class="btn-primary">Grab Deal</a>
+      </div>
+
+      <div class="promo-card" data-brand="samsung">
+        <div class="discount-badge">15% OFF</div>
+        <img src="https://images.unsplash.com/photo-1616627980068-539a7f1c20d6?w=600" alt="Samsung Galaxy S24 Offer" class="promo-img" />
+        <h3 class="promo-name">Galaxy S24 Mega Offer</h3>
+        <p class="promo-desc">Flagship design, pro-grade camera — now at an unbeatable price.</p>
+        <p class="promo-price"><span class="old-price">$899</span> $764</p>
+        <a href="product-details.html" class="btn-primary">Grab Deal</a>
+      </div>
+
+      <div class="promo-card" data-brand="google">
+        <div class="discount-badge">25% OFF</div>
+        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=600" alt="Google Pixel 9 Offer" class="promo-img" />
+        <h3 class="promo-name">Google Pixel 9 Offer</h3>
+        <p class="promo-desc">Get AI-powered photography excellence at a reduced price!</p>
+        <p class="promo-price"><span class="old-price">$799</span> $599</p>
+        <a href="product-details.html" class="btn-primary">Grab Deal</a>
+      </div>
+
+      <div class="promo-card" data-brand="oneplus">
+        <div class="discount-badge">10% OFF</div>
+        <img src="https://images.unsplash.com/photo-1612629831733-99f08d1e04f9?w=600" alt="OnePlus 12 Offer" class="promo-img" />
+        <h3 class="promo-name">OnePlus 12 Festival Offer</h3>
+        <p class="promo-desc">Fast, smooth, and stylish. Get yours with a festive discount!</p>
+        <p class="promo-price"><span class="old-price">$749</span> $674</p>
+        <a href="product-details.html" class="btn-primary">Grab Deal</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER (unchanged) -->
+  <footer class="footer">
+    <a href="index.html" class="footer-logo">Mobile Store</a>
+    <p>© 2025 Mobile Store. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const closeBtn = document.getElementById("menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => mobileMenu.classList.add("open"));
+    closeBtn.addEventListener("click", () => mobileMenu.classList.remove("open"));
+
+    // Search & Filter
+    const searchInput = document.getElementById("search");
+    const filterSelect = document.getElementById("filter");
+    const promoCards = document.querySelectorAll(".promo-card");
+
+    function filterPromos() {
+      const searchText = searchInput.value.toLowerCase();
+      const selectedBrand = filterSelect.value;
+
+      promoCards.forEach(card => {
+        const name = card.querySelector(".promo-name").textContent.toLowerCase();
+        const brand = card.getAttribute("data-brand");
+        const matchesSearch = name.includes(searchText);
+        const matchesBrand = selectedBrand === "all" || selectedBrand === brand;
+        card.style.display = matchesSearch && matchesBrand ? "block" : "none";
+      });
+    }
+
+    searchInput.addEventListener("input", filterPromos);
+    filterSelect.addEventListener("change", filterPromos);
+  </script>
+</body>
+</html>
