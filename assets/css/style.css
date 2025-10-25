@@ -1,122 +1,15 @@
-/* Shared stylesheet for all pages */
-/* ====== General Page Styles ====== */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #f5f7fa;
-  color: #333;
-}
-
-header.header {
-  background-color: #007bff;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 0;
-}
-
-header.header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-footer.footer {
-  background-color: #222;
-  color: #ddd;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
-
-/* ====== Contact Container ====== */
-.contact-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 2rem 10%;
-  gap: 2rem;
-}
-
-.contact-form-section,
-.contact-info-section {
-  flex: 1;
-  min-width: 300px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ====== Form Styling ====== */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.8rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-.contact-form button {
-  padding: 0.9rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-form button:hover {
-  background-color: #0056b3;
-}
-
-/* ====== Contact Info ====== */
-.contact-info-section h2 {
-  margin-bottom: 1rem;
-}
-
-.contact-info-section p {
-  margin: 0.5rem 0;
-}
-
-/* ====== Responsive Design ====== */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    padding: 1.5rem;
-  }
-}
-
-/* ====== Global Reset ====== */
+/* =====================================================
+   GLOBAL STYLES - Shared across all pages
+===================================================== */
+/* =====================================================
+   GLOBAL STYLES - Shared across all pages
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ====== Base Styles ====== */
 body {
   font-family: 'Poppins', Arial, sans-serif;
   background-color: #f5f7fa;
@@ -124,7 +17,9 @@ body {
   line-height: 1.6;
 }
 
-/* ====== Header / Navbar ====== */
+/* =====================================================
+   HEADER / NAVBAR
+===================================================== */
 header.header {
   background: linear-gradient(90deg, #007bff, #00b4d8);
   color: #fff;
@@ -136,16 +31,17 @@ header.header {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.store-title {
+.logo {
   font-size: 1.7rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: #fff;
+  text-decoration: none;
 }
 
-.nav-links a {
+.nav-desktop a {
   color: #fff;
   text-decoration: none;
   margin: 0 0.8rem;
@@ -153,32 +49,62 @@ header.header {
   transition: color 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-desktop a:hover,
+.nav-desktop a.active {
   color: #ffeb3b;
 }
 
-/* ====== Footer ====== */
-footer.footer {
-  background-color: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 1.5rem 0;
-  margin-top: 3rem;
-  font-size: 0.95rem;
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
 
-/* ====== Page Headings ====== */
-.page-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #222;
-  text-align: center;
-  margin: 2rem 0;
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: right 0.3s ease;
+  z-index: 200;
 }
 
-/* ====== Button Styling ====== */
-.btn {
+.mobile-menu.open {
+  right: 0;
+}
+
+.menu-close {
+  align-self: flex-end;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.btn-primary,
+.hero-buttons a {
   display: inline-block;
   background: linear-gradient(90deg, #007bff, #00b4d8);
   color: #fff;
@@ -189,39 +115,218 @@ footer.footer {
   transition: 0.3s;
 }
 
-.btn:hover {
+.btn-primary:hover,
+.hero-buttons a:hover {
   background: linear-gradient(90deg, #0056b3, #0096c7);
 }
 
-/* ====== Home Page ====== */
-.home-container {
-  text-align: center;
-  padding: 4rem 10%;
-  background: #fff;
+.btn-secondary {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #007bff;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.home-container h2 {
-  font-size: 2.2rem;
-  color: #111;
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero {
+  padding: 4rem 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-content {
+  display: contents;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  color: #222;
   margin-bottom: 1rem;
 }
 
-.home-container p {
-  font-size: 1.1rem;
+.hero-text p {
+  font-size: 1rem;
   color: #555;
-  max-width: 700px;
-  margin: 0 auto 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.home-banner img {
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
   width: 100%;
-  max-width: 800px;
   border-radius: 12px;
-  margin-top: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* ====== Products Page ====== */
+/* =====================================================
+   FEATURES SECTION
+===================================================== */
+.features {
+  padding: 3rem 10%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title span {
+  color: #007bff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title h2 {
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* =====================================================
+   SHOWCASE SECTION
+===================================================== */
+.showcase {
+  padding: 3rem 10%;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.showcase-item {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.showcase-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.showcase-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.showcase-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.showcase-item p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer.footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem 5%;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-socials a {
+  color: #007bff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid,
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+/* =====================================================
+   PRODUCTS PAGE
+===================================================== */
 .products-container {
   padding: 3rem 10%;
   background-color: #f9fafc;
@@ -236,14 +341,14 @@ footer.footer {
 .product-card {
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .product-img {
@@ -278,37 +383,51 @@ footer.footer {
   margin-top: 3rem;
 }
 
-/* ====== Contact Page ====== */
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
 .contact-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 3rem 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
 .contact-form-section,
 .contact-info-section {
-  flex: 1;
-  min-width: 300px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form-section:hover,
+.contact-info-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-form-section h2,
+.contact-info-section h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #222;
+  margin-bottom: 1rem;
 }
 
 .contact-form label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -317,10 +436,28 @@ footer.footer {
 .contact-form textarea:focus {
   outline: none;
   border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 6px rgba(0,123,255,0.25);
 }
 
-/* ====== Promotions Page ====== */
+.contact-form button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg,#007bff,#00b4d8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg,#0056b3,#0096c7);
+}
+
+/* =====================================================
+   PROMOTIONS PAGE
+===================================================== */
 .promotions-container {
   padding: 3rem 10%;
   background-color: #fff;
@@ -328,7 +465,7 @@ footer.footer {
 }
 
 .promo-card {
-  background: linear-gradient(145deg, #007bff, #00b4d8);
+  background: linear-gradient(145deg,#007bff,#00b4d8);
   color: #fff;
   padding: 2rem;
   border-radius: 12px;
@@ -351,9 +488,11 @@ footer.footer {
   margin-bottom: 1rem;
 }
 
-/* ====== Responsive Design ====== */
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
 @media (max-width: 768px) {
-  .header {
+  header.header {
     flex-direction: column;
     text-align: center;
   }
@@ -362,12 +501,9 @@ footer.footer {
     margin-top: 0.8rem;
   }
 
+  .home-container,
+  .products-container,
   .contact-container {
-    flex-direction: column;
-    padding: 2rem 5%;
-  }
-
-  .products-container {
     padding: 2rem 5%;
   }
 }

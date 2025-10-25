@@ -7,68 +7,80 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
-  <!-- Navbar / Header -->
+
+  <!-- HEADER -->
   <header class="header">
-    <h1 class="store-title">📱 Mobile Store</h1>
-    <nav class="nav-links">
-      <a href="../index.html">Home</a>
+    <a href="index.html" class="logo">Mobile Store</a>
+    <nav class="nav-desktop nav-links">
+      <a href="index.html">Home</a>
       <a href="products.html" class="active">Products</a>
-      <a href="contact.html">Contact</a>
       <a href="promotions.html">Promotions</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <button id="menu-toggle" class="menu-toggle">☰</button>
   </header>
 
-  <!-- Main Section -->
-  <main class="products-container">
-    <h2 class="page-title">Our Latest Mobiles</h2>
+  <!-- MOBILE MENU -->
+  <nav id="mobile-menu" class="mobile-menu">
+    <button id="menu-close" class="menu-close">✖</button>
+    <a href="index.html" class="menu-link">Home</a>
+    <a href="products.html" class="menu-link">Products</a>
+    <a href="promotions.html" class="menu-link">Promotions</a>
+    <a href="contact.html" class="menu-link">Contact</a>
+  </nav>
 
+  <!-- MAIN -->
+  <main class="page-container products-container">
+    <h2 class="page-title">Our Latest Mobiles</h2>
     <div class="product-grid">
-      <!-- Product Card 1 -->
+      <!-- Product 1 -->
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="iPhone 15" class="product-img" />
         <h3 class="product-name">iPhone 15</h3>
         <p class="product-desc">Experience the future with the A17 Bionic chip and advanced camera system.</p>
         <p class="product-price">$999</p>
-        <a href="product-details.html" class="btn">View Details</a>
+        <a href="product-details.html" class="btn-primary">View Details</a>
       </div>
-
-      <!-- Product Card 2 -->
+      <!-- Product 2 -->
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="Samsung Galaxy S24" class="product-img" />
         <h3 class="product-name">Samsung Galaxy S24</h3>
         <p class="product-desc">Powerful performance and stunning design for modern users.</p>
         <p class="product-price">$899</p>
-        <a href="product-details.html" class="btn">View Details</a>
+        <a href="product-details.html" class="btn-primary">View Details</a>
       </div>
-
-      <!-- Product Card 3 -->
+      <!-- Product 3 -->
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="Google Pixel 9" class="product-img" />
         <h3 class="product-name">Google Pixel 9</h3>
         <p class="product-desc">Pure Android experience with outstanding AI-powered camera.</p>
         <p class="product-price">$799</p>
-        <a href="product-details.html" class="btn">View Details</a>
+        <a href="product-details.html" class="btn-primary">View Details</a>
       </div>
-
-      <!-- Product Card 4 -->
+      <!-- Product 4 -->
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600" alt="OnePlus 12" class="product-img" />
         <h3 class="product-name">OnePlus 12</h3>
         <p class="product-desc">Speed and style combined with next-gen display technology.</p>
         <p class="product-price">$749</p>
-        <a href="product-details.html" class="btn">View Details</a>
+        <a href="product-details.html" class="btn-primary">View Details</a>
       </div>
-    </div>
-
-    <!-- Optional Load More Button -->
-    <div class="load-more">
-      <button class="btn load-btn">Load More</button>
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
+    <a href="index.html" class="footer-logo">Mobile Store</a>
     <p>© 2025 Mobile Store. All rights reserved.</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const closeBtn = document.getElementById("menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => mobileMenu.classList.add("open"));
+    closeBtn.addEventListener("click", () => mobileMenu.classList.remove("open"));
+  </script>
 </body>
 </html>
